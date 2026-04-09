@@ -92,9 +92,24 @@ export default function Waitlist() {
 
   const handleSubmit = async () => {
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1800));
-    setLoading(false);
-    setSubmitted(true);
+    try {
+      const res = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) {
+        throw new Error("Erreur de soumission du formulaire");
+      }
+
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Erreur handleSubmit:", error);
+      alert("Une erreur est survenue lors de l'envoi. Veuillez réessayer.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const canProceed = () => {
