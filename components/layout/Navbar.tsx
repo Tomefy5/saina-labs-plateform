@@ -77,19 +77,21 @@ export default function Navbar() {
               }}
             >
               <Image
-                src="/logo-saina-labs-gd-removebg-preview.png"
+                src="/logo-saina-transparent.png"
                 alt="Saina Labs Logo"
                 width={48}
                 height={48}
                 style={{ objectFit: "contain", width: 44, height: 44 }}
               />
               <span
+                className="gradient-text"
                 style={{
-                  color: "var(--text-primary)",
                   fontFamily: "'Syne', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "1.15rem",
-                  letterSpacing: "-0.02em",
+                  fontWeight: 800,
+                  fontSize: "1.4rem",
+                  letterSpacing: "-0.04em",
+                  textShadow: "0 0 20px rgba(0, 180, 255, 0.4)",
+                  paddingLeft: "4px"
                 }}
               >
                 Saina Labs
@@ -136,7 +138,7 @@ export default function Navbar() {
                   textDecoration: "none",
                 }}
               >
-                Rejoindre la liste
+                Diagnostic gratuit
               </a>
             </div>
 
@@ -203,7 +205,7 @@ export default function Navbar() {
                 width: "100%",
               }}
             >
-              Rejoindre la liste
+              Diagnostic gratuit
             </a>
           </div>
         </div>

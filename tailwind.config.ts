@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         cyan: { DEFAULT: "#00B4FF", light: "#38D1F8" },
         blue: { brand: "#2563EB", dark: "#1E3A8A" },
+        violet: { DEFAULT: "#7C3AED", light: "#A78BFA" },
       },
       fontFamily: {
         syne: ["Syne", "sans-serif"],

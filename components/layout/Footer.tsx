@@ -95,7 +95,7 @@ export default function Footer() {
                   zIndex: 0
                 }} />
                 <Image
-                  src="/logo-saina-labs-gd-removebg-preview.png"
+                  src="/logo-saina-transparent.png"
                   alt="Saina Labs Logo"
                   width={48}
                   height={48}
@@ -116,15 +116,23 @@ export default function Footer() {
               </span>
             </div>
             <p style={{
+              color: "var(--cyan)",
+              fontSize: "0.8rem",
+              fontFamily: "'Syne', sans-serif",
+              fontWeight: 600,
+              marginBottom: "12px",
+            }}>
+              L&apos;IA travaille. Vous dirigez.
+            </p>
+            <p style={{
               color: "var(--text-muted)",
               fontSize: "0.875rem",
               lineHeight: 1.7,
               maxWidth: "320px",
               marginBottom: "20px",
             }}>
-              Agence d&apos;Intelligence Artificielle &amp; d&apos;Automatisation pour les
-              entrepreneurs malgaches. Saina signifie{" "}
-              <em>intelligence, sagesse, habileté</em> en malgache.
+              Agence d&apos;automatisation IA pour les entrepreneurs malgaches.
+              Résultats concrets. Garantie ROI 30 jours.
             </p>
             <div style={{ display: "flex", gap: "10px" }}>
               {[

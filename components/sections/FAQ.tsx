@@ -6,31 +6,39 @@ import { Plus, Minus } from "lucide-react";
 const faqs = [
   {
     q: "Est-ce que je dois être technologue pour utiliser vos services ?",
-    a: "Absolument pas. Notre philosophie est simple : vous continuez à faire ce que vous faites le mieux — gérer votre business — et on s'occupe de tout ce qui touche à la technologie. On vous forme à utiliser les outils qu'on déploie, en moins de quelques heures.",
+    a: "Absolument pas. Vous continuez à gérer votre business — on s'occupe de toute la partie technique. On vous forme à utiliser les outils qu'on déploie, en moins de quelques heures.",
   },
   {
     q: "Est-ce que c'est adapté à mon type d'activité ?",
-    a: "Si vous avez des tâches répétitives dans votre activité — et toutes les entreprises en ont — Saina Labs peut vous aider. On a travaillé avec des commerces, des restaurants, des prestataires de services, des professionnels de santé, et plus encore.",
+    a: "Si vous avez des tâches répétitives — et toutes les entreprises en ont — Saina Labs peut vous aider. On travaille avec des commerces, e-commerces, agences RH, cabinets de recrutement, restaurants, prestataires de services, et plus encore.",
   },
   {
-    q: "Combien de temps faut-il pour voir des résultats ?",
-    a: "Entre 1 et 4 semaines selon la complexité de la solution. Une automatisation WhatsApp simple peut être opérationnelle en 48h. Un système plus complet avec agents IA sur-mesure prend 2 à 4 semaines. Mais vous verrez des résultats dès la première semaine.",
+    q: "Combien de temps pour voir des résultats ?",
+    a: "Une automatisation WhatsApp simple peut être opérationnelle en 48h. Un système complet prend 1 à 2 semaines. Vous verrez des résultats dès la première semaine.",
+  },
+  {
+    q: "Comment fonctionne la garantie ROI 30 jours ?",
+    a: "C'est simple : si après 30 jours vous ne constatez pas un gain de temps mesurable, on vous rembourse intégralement. On croit en nos solutions — c'est pourquoi on prend le risque, pas vous.",
+  },
+  {
+    q: "Vous acceptez Mobile Money pour les paiements ?",
+    a: "Oui. On s'adapte à vos habitudes de paiement. Mobile Money, virement bancaire, ou tout autre moyen qui vous convient. Pas de friction inutile.",
   },
   {
     q: "Que se passe-t-il si la connexion internet est instable ?",
-    a: "C'est une réalité qu'on anticipe dans chaque solution. Nos systèmes sont conçus pour fonctionner avec une connexion limitée et pour gérer les interruptions sans perte de données. On connaît le contexte malgache — on n'impose pas des solutions pensées pour Paris ou New York.",
+    a: "Nos systèmes sont conçus pour le contexte malgache : connexion limitée, interruptions gérées sans perte de données. On n'impose pas des solutions pensées pour Paris ou New York.",
   },
   {
     q: "Et si j'ai déjà des outils en place (WhatsApp Business, Excel, etc.) ?",
-    a: "Parfait. On s'intègre avec ce que vous avez déjà. Pas besoin de tout changer, ni de perdre vos données existantes. Notre travail est de connecter vos outils entre eux et de les rendre plus intelligents — pas de les remplacer.",
+    a: "Parfait. On s'intègre avec ce que vous avez déjà. Notre travail est de connecter vos outils entre eux et de les rendre plus intelligents — pas de les remplacer.",
   },
   {
     q: "Quel est l'engagement minimum ?",
-    a: "Aucun engagement long terme au départ. On commence par un diagnostic gratuit pour voir si on peut vous apporter de la valeur. Ensuite, on travaille projet par projet. Vous décidez de la suite en fonction des résultats — pas d'un contrat imposé.",
+    a: "Aucun engagement long terme. On commence par un diagnostic gratuit. Ensuite, on travaille projet par projet. Vous décidez de la suite en fonction des résultats — pas d'un contrat imposé.",
   },
   {
     q: "Comment garantissez-vous la confidentialité de mes données ?",
-    a: "Vos données restent vôtres. On signe un accord de confidentialité avec chaque client. Nos infrastructures utilisent des solutions sécurisées (Supabase, serveurs hébergés en Europe) et on applique des bonnes pratiques de sécurité rigoureuses.",
+    a: "Vos données restent vôtres. Accord de confidentialité signé avec chaque client. Infrastructures sécurisées et bonnes pratiques de sécurité rigoureuses.",
   },
 ];
 
@@ -100,11 +108,11 @@ export default function FAQ() {
                     borderRadius: "50%",
                     background:
                       openIndex === i
-                        ? "rgba(0,180,255,0.15)"
+                        ? "rgba(124,58,237,0.15)"
                         : "rgba(255,255,255,0.04)",
                     border:
                       openIndex === i
-                        ? "1px solid rgba(0,180,255,0.3)"
+                        ? "1px solid rgba(124,58,237,0.3)"
                         : "1px solid var(--border)",
                     display: "flex",
                     alignItems: "center",
@@ -114,7 +122,7 @@ export default function FAQ() {
                   }}
                 >
                   {openIndex === i ? (
-                    <Minus size={14} color="#00B4FF" />
+                    <Minus size={14} color="#7C3AED" />
                   ) : (
                     <Plus size={14} color="var(--text-muted)" />
                   )}
@@ -152,8 +160,8 @@ export default function FAQ() {
             padding: "36px",
             borderRadius: "20px",
             background:
-              "linear-gradient(135deg, rgba(0,180,255,0.05), rgba(37,99,235,0.05))",
-            border: "1px solid rgba(0,180,255,0.1)",
+              "linear-gradient(135deg, rgba(0,180,255,0.05), rgba(124,58,237,0.05))",
+            border: "1px solid rgba(124,58,237,0.1)",
             maxWidth: "600px",
             marginLeft: "auto",
             marginRight: "auto",

@@ -6,34 +6,34 @@ const steps = [
   {
     icon: ClipboardList,
     number: "01",
-    title: "Diagnostic",
-    duration: "2 à 5 jours",
+    title: "Diagnostic gratuit",
+    duration: "1 à 3 jours",
     description:
-      "On analyse votre activité en profondeur et on identifie les 3 à 5 tâches les plus chronophages. Pas de jargon — une conversation entre entrepreneurs.",
+      "On analyse votre activité et on identifie les 3 à 5 tâches les plus chronophages. Une simple conversation — pas de jargon.",
   },
   {
     icon: Lightbulb,
     number: "02",
-    title: "Conception",
+    title: "Solution sur-mesure",
     duration: "3 à 7 jours",
     description:
-      "On conçoit la solution IA adaptée à votre réalité : taille, budget, outils existants. Chaque solution est unique, pas un template générique.",
+      "On conçoit la solution adaptée à votre réalité : taille, budget, outils existants. Chaque solution est unique.",
   },
   {
     icon: Rocket,
     number: "03",
-    title: "Déploiement",
+    title: "Déploiement rapide",
     duration: "1 à 2 semaines",
     description:
-      "On met en place les automatisations, on connecte vos outils et on teste tout avec vous avant le lancement. Zéro surprise.",
+      "On déploie, on connecte vos outils (WhatsApp, Excel, Mobile Money) et on teste tout avec vous. Zéro surprise.",
   },
   {
     icon: LifeBuoy,
     number: "04",
-    title: "Suivi",
+    title: "Suivi & garantie",
     duration: "En continu",
     description:
-      "On reste disponibles pour ajuster, former et faire évoluer les outils avec vous. Votre succès est notre référence.",
+      "On reste disponibles pour ajuster et optimiser. Garantie ROI 30 jours : si les résultats ne sont pas là, on vous rembourse.",
   },
 ];
 
@@ -54,7 +54,7 @@ export default function HowItWorks() {
           width: "800px",
           height: "400px",
           background:
-            "radial-gradient(ellipse, rgba(37,99,235,0.07) 0%, transparent 70%)",
+            "radial-gradient(ellipse, rgba(124,58,237,0.07) 0%, transparent 70%)",
           pointerEvents: "none",
         }}
       />
@@ -96,7 +96,7 @@ export default function HowItWorks() {
               right: "calc(12.5% - 1px)",
               height: "1px",
               background:
-                "linear-gradient(90deg, transparent, rgba(0,180,255,0.3), rgba(37,99,235,0.3), rgba(0,180,255,0.1), transparent)",
+                "linear-gradient(90deg, transparent, rgba(124,58,237,0.3), rgba(0,180,255,0.3), rgba(124,58,237,0.1), transparent)",
               pointerEvents: "none",
               display: "none",
             }}
@@ -112,7 +112,6 @@ export default function HowItWorks() {
           >
             {steps.map((step, i) => {
               const Icon = step.icon;
-              const isLast = i === steps.length - 1;
               return (
                 <div
                   key={i}
@@ -131,8 +130,8 @@ export default function HowItWorks() {
                       height: "72px",
                       borderRadius: "50%",
                       background:
-                        "linear-gradient(135deg, rgba(0,180,255,0.15), rgba(37,99,235,0.1))",
-                      border: "1px solid rgba(0, 180, 255, 0.25)",
+                        "linear-gradient(135deg, rgba(0,180,255,0.15), rgba(124,58,237,0.1))",
+                      border: "1px solid rgba(124, 58, 237, 0.25)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -147,10 +146,10 @@ export default function HowItWorks() {
                         position: "absolute",
                         inset: "-4px",
                         borderRadius: "50%",
-                        border: "1px solid rgba(0, 180, 255, 0.15)",
+                        border: "1px solid rgba(124, 58, 237, 0.15)",
                       }}
                     />
-                    <Icon size={28} color="#00B4FF" />
+                    <Icon size={28} color="#7C3AED" />
 
                     {/* Number badge */}
                     <div
@@ -161,7 +160,7 @@ export default function HowItWorks() {
                         width: "22px",
                         height: "22px",
                         borderRadius: "50%",
-                        background: "linear-gradient(135deg, #00B4FF, #2563EB)",
+                        background: "linear-gradient(135deg, #00B4FF, #7C3AED)",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -180,9 +179,9 @@ export default function HowItWorks() {
                     style={{
                       fontSize: "0.7rem",
                       fontWeight: 600,
-                      color: "#00B4FF",
-                      background: "rgba(0,180,255,0.08)",
-                      border: "1px solid rgba(0,180,255,0.2)",
+                      color: "#7C3AED",
+                      background: "rgba(124,58,237,0.08)",
+                      border: "1px solid rgba(124,58,237,0.2)",
                       borderRadius: "100px",
                       padding: "3px 10px",
                       marginBottom: "12px",
@@ -228,7 +227,7 @@ export default function HowItWorks() {
               textDecoration: "none",
             }}
           >
-            Démarrer mon diagnostic gratuit
+            Démarrer mon diagnostic gratuit →
           </a>
         </div>
       </div>

@@ -1,66 +1,55 @@
 "use client";
 
-import { MessageCircle, BarChart3, Workflow, Bot, Search, GraduationCap } from "lucide-react";
+import { ShoppingBag, Globe, Users, Briefcase } from "lucide-react";
 
-const services = [
+const segments = [
   {
-    icon: MessageCircle,
-    title: "Automatisation des réponses",
-    subtitle: "Communication intelligente",
-    description:
-      "Répondeurs intelligents sur WhatsApp, email ou Messenger qui gèrent les questions fréquentes, les prises de rendez-vous et le suivi client — automatiquement.",
-    example:
-      "Un restaurant reçoit 40 messages/jour pour les réservations. Après notre intervention : 0 message manuel.",
+    icon: ShoppingBag,
+    title: "Commerce de détail",
+    tagline: "Vos clients répondus. Vos stocks suivis. Vos ventes boostées.",
+    results: [
+      "Réponses WhatsApp automatiques 24/7",
+      "Suivi de stock en temps réel",
+      "Relances clients automatisées",
+    ],
+    mention: "WhatsApp · Mobile Money",
     color: "#00B4FF",
   },
   {
-    icon: BarChart3,
-    title: "Gestion des données",
-    subtitle: "Organisation centralisée",
-    description:
-      "Centralisation et structuration de vos données clients, stocks, ventes dans un système simple et automatisé.",
-    example:
-      "Un prestataire retrouve l'historique complet d'un client en 2 secondes.",
-    color: "#38D1F8",
-  },
-  {
-    icon: Workflow,
-    title: "Flux de travail internes",
-    subtitle: "Automatisation end-to-end",
-    description:
-      "Connexion de vos outils (WhatsApp, email, Excel, formulaires) pour que les informations circulent sans intervention humaine.",
-    example:
-      "Un formulaire de commande crée une facture, notifie l'équipe et met à jour le stock automatiquement.",
+    icon: Globe,
+    title: "E-commerce",
+    tagline: "Commandes confirmées. Paniers relancés. Livraisons tracées.",
+    results: [
+      "Confirmation de commande instantanée",
+      "Relance panier abandonné sur WhatsApp",
+      "Suivi de livraison automatisé",
+    ],
+    mention: "WhatsApp · Mobile Money",
     color: "#2563EB",
   },
   {
-    icon: Bot,
-    title: "Agents IA sur-mesure",
-    subtitle: "Intelligence personnalisée",
-    description:
-      "Assistants IA développés pour votre activité spécifique — un agent qui connaît votre catalogue, vos prix, vos process.",
-    example:
-      "Un agent répond aux devis en votre nom avec vos tarifs exacts, 24h/24.",
-    color: "#00B4FF",
+    icon: Users,
+    title: "Agences RH",
+    tagline: "CV triés. Candidats suivis. Rapports générés.",
+    results: [
+      "Tri automatique des candidatures",
+      "Suivi candidat centralisé",
+      "Rapports de recrutement en 1 clic",
+    ],
+    mention: "WhatsApp · Email",
+    color: "#7C3AED",
   },
   {
-    icon: Search,
-    title: "Audit & Conseil IA",
-    subtitle: "Diagnostic précis",
-    description:
-      "Analyse de votre activité pour identifier les 3 à 5 tâches qui gagneraient le plus à être automatisées.",
-    example:
-      "2h de travail ensemble. Un rapport qui dit exactement où vous perdez du temps et de l'argent.",
-    color: "#38D1F8",
-  },
-  {
-    icon: GraduationCap,
-    title: "Formation & Accompagnement",
-    subtitle: "Montée en compétences",
-    description:
-      "Sessions courtes pour que vous et votre équipe maîtrisiez les outils mis en place — sans jargon technique.",
-    example: "Votre assistante opère le système seule après une session de 3h.",
-    color: "#2563EB",
+    icon: Briefcase,
+    title: "Cabinets de recrutement",
+    tagline: "Shortlists rapides. Missions tenues. Qualité préservée.",
+    results: [
+      "Shortlists générées automatiquement",
+      "Suivi des missions en temps réel",
+      "Reporting client automatisé",
+    ],
+    mention: "WhatsApp · Email",
+    color: "#A78BFA",
   },
 ];
 
@@ -84,7 +73,7 @@ export default function Services() {
           width: "600px",
           height: "500px",
           background:
-            "radial-gradient(ellipse, rgba(0,180,255,0.06) 0%, transparent 70%)",
+            "radial-gradient(ellipse, rgba(124,58,237,0.06) 0%, transparent 70%)",
           pointerEvents: "none",
         }}
       />
@@ -96,7 +85,7 @@ export default function Services() {
             className="tag-pill"
             style={{ marginBottom: "20px", display: "inline-flex" }}
           >
-            Nos services
+            Nos segments
           </div>
           <h2
             style={{
@@ -104,8 +93,8 @@ export default function Services() {
               marginBottom: "20px",
             }}
           >
-            Ce que Saina Labs{" "}
-            <span className="gradient-text">fait pour vous</span>
+            Une solution pour{" "}
+            <span className="gradient-text">votre activité</span>
           </h2>
           <p
             style={{
@@ -115,21 +104,28 @@ export default function Services() {
               fontSize: "1.05rem",
             }}
           >
-            Des solutions concrètes, mesurables, adaptées à votre réalité.
-            Pas de promesses vagues — des résultats visibles.
+            Des automatisations concrètes, adaptées à votre secteur.
+            Résultats mesurables dès les premières semaines.
           </p>
         </div>
 
-        {/* Services grid */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: "20px",
-          }}
-        >
-          {services.map((service, i) => {
-            const Icon = service.icon;
+      <style jsx>{`
+        .segments-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        @media (min-width: 640px) {
+          .segments-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+      `}</style>
+
+        {/* Segments grid */}
+        <div className="segments-grid">
+          {segments.map((segment, i) => {
+            const Icon = segment.icon;
             return (
               <div
                 key={i}
@@ -150,18 +146,18 @@ export default function Services() {
                     right: 0,
                     width: "120px",
                     height: "120px",
-                    background: `radial-gradient(circle at top right, ${service.color}18 0%, transparent 70%)`,
+                    background: `radial-gradient(circle at top right, ${segment.color}18 0%, transparent 70%)`,
                     pointerEvents: "none",
                   }}
                 />
 
-                {/* Icon + subtitle */}
+                {/* Icon + title */}
                 <div
                   style={{
                     display: "flex",
                     alignItems: "center",
                     gap: "12px",
-                    marginBottom: "20px",
+                    marginBottom: "16px",
                   }}
                 >
                   <div
@@ -169,79 +165,95 @@ export default function Services() {
                       width: "46px",
                       height: "46px",
                       borderRadius: "12px",
-                      background: `${service.color}15`,
-                      border: `1px solid ${service.color}30`,
+                      background: `${segment.color}15`,
+                      border: `1px solid ${segment.color}30`,
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       flexShrink: 0,
                     }}
                   >
-                    <Icon size={22} color={service.color} />
+                    <Icon size={22} color={segment.color} />
                   </div>
-                  <span
+                  <h3
                     style={{
-                      fontSize: "0.73rem",
-                      fontWeight: 500,
-                      color: service.color,
-                      textTransform: "uppercase",
-                      letterSpacing: "0.08em",
+                      fontSize: "1.15rem",
+                      fontWeight: 700,
+                      color: "var(--text-primary)",
                     }}
                   >
-                    {service.subtitle}
-                  </span>
+                    {segment.title}
+                  </h3>
                 </div>
 
-                {/* Title */}
-                <h3
-                  style={{
-                    fontSize: "1.15rem",
-                    fontWeight: 700,
-                    marginBottom: "12px",
-                    color: "var(--text-primary)",
-                  }}
-                >
-                  {service.title}
-                </h3>
-
-                {/* Description */}
+                {/* Tagline */}
                 <p
                   style={{
-                    color: "var(--text-secondary)",
-                    fontSize: "0.9rem",
-                    lineHeight: 1.65,
+                    fontSize: "0.95rem",
+                    fontWeight: 600,
+                    fontFamily: "'Syne', sans-serif",
+                    color: segment.color,
+                    marginBottom: "20px",
+                    lineHeight: 1.4,
+                  }}
+                >
+                  {segment.tagline}
+                </p>
+
+                {/* Results list */}
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "10px",
                     marginBottom: "20px",
                   }}
                 >
-                  {service.description}
-                </p>
+                  {segment.results.map((result, j) => (
+                    <div
+                      key={j}
+                      style={{
+                        display: "flex",
+                        alignItems: "flex-start",
+                        gap: "8px",
+                        fontSize: "0.875rem",
+                        color: "var(--text-secondary)",
+                        lineHeight: 1.5,
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: segment.color,
+                          fontWeight: 700,
+                          fontSize: "0.85rem",
+                          marginTop: "1px",
+                          flexShrink: 0,
+                        }}
+                      >
+                        ✓
+                      </span>
+                      {result}
+                    </div>
+                  ))}
+                </div>
 
-                {/* Example */}
+                {/* Tools mention */}
                 <div
                   style={{
-                    padding: "12px 16px",
-                    borderRadius: "10px",
+                    padding: "8px 14px",
+                    borderRadius: "8px",
                     background: "rgba(0,0,0,0.25)",
                     border: "1px solid rgba(255,255,255,0.05)",
-                    fontSize: "0.8rem",
+                    fontSize: "0.75rem",
                     color: "var(--text-muted)",
-                    lineHeight: 1.6,
+                    fontWeight: 500,
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "6px",
                   }}
                 >
-                  <span
-                    style={{
-                      color: service.color,
-                      fontWeight: 600,
-                      fontSize: "0.7rem",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.06em",
-                      display: "block",
-                      marginBottom: "4px",
-                    }}
-                  >
-                    Cas réel →
-                  </span>
-                  {service.example}
+                  <span style={{ fontSize: "0.85rem" }}>📱</span>
+                  {segment.mention}
                 </div>
               </div>
             );

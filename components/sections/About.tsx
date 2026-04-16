@@ -53,7 +53,7 @@ export default function About() {
                 style={{
                   borderRadius: "16px",
                   padding: "28px",
-                  borderLeft: "3px solid #00B4FF",
+                  borderLeft: "3px solid #7C3AED",
                 }}
               >
                 <div
@@ -64,12 +64,12 @@ export default function About() {
                     marginBottom: "14px",
                   }}
                 >
-                  <Heart size={18} color="#00B4FF" />
+                  <Heart size={18} color="#7C3AED" />
                   <span
                     style={{
                       fontSize: "0.75rem",
                       fontWeight: 700,
-                      color: "#00B4FF",
+                      color: "#7C3AED",
                       textTransform: "uppercase",
                       letterSpacing: "0.08em",
                     }}
@@ -158,7 +158,7 @@ export default function About() {
                   right: 0,
                   height: "120px",
                   background:
-                    "linear-gradient(180deg, rgba(0,180,255,0.06), transparent)",
+                    "linear-gradient(180deg, rgba(124,58,237,0.06), transparent)",
                   pointerEvents: "none",
                 }}
               />
@@ -169,7 +169,7 @@ export default function About() {
                   width: "96px",
                   height: "96px",
                   borderRadius: "50%",
-                  border: "2px solid rgba(0,180,255,0.3)",
+                  border: "2px solid rgba(124,58,237,0.3)",
                   margin: "0 auto 20px",
                   position: "relative",
                   display: "flex",
@@ -214,7 +214,7 @@ export default function About() {
               </h3>
               <p
                 style={{
-                  color: "#00B4FF",
+                  color: "#7C3AED",
                   fontSize: "0.8rem",
                   fontWeight: 600,
                   marginBottom: "16px",
@@ -235,35 +235,6 @@ export default function About() {
                 solutions concrètes pour les entrepreneurs malgaches.
               </p>
 
-              {/* Stack badges */}
-              <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: "6px",
-                  justifyContent: "center",
-                  marginBottom: "20px",
-                }}
-              >
-                {["n8n", "FastAPI", "OpenAI", "Supabase", "WhatsApp"].map(
-                  (tech) => (
-                    <span
-                      key={tech}
-                      style={{
-                        fontSize: "0.7rem",
-                        padding: "3px 10px",
-                        borderRadius: "100px",
-                        background: "rgba(255,255,255,0.04)",
-                        border: "1px solid var(--border)",
-                        color: "var(--text-muted)",
-                      }}
-                    >
-                      {tech}
-                    </span>
-                  )
-                )}
-              </div>
-
               <a
                 href="https://www.linkedin.com/in/tomefy-ny-soa-andry-tsiresy-9a111a322"
                 target="_blank"
@@ -278,7 +249,7 @@ export default function About() {
                   transition: "color 0.2s",
                 }}
                 onMouseEnter={(e) =>
-                  (e.currentTarget.style.color = "var(--cyan)")
+                  (e.currentTarget.style.color = "var(--violet)")
                 }
                 onMouseLeave={(e) =>
                   (e.currentTarget.style.color = "var(--text-muted)")

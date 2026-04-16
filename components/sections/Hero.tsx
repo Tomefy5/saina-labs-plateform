@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { ArrowRight, ChevronDown, Zap, Play } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, ChevronDown, Zap, Shield, Smartphone, Clock } from "lucide-react";
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -25,7 +26,7 @@ export default function Hero() {
     resize();
     window.addEventListener("resize", resize);
 
-    const colors = ["#00B4FF", "#2563EB", "#38D1F8", "#1E40AF"];
+    const colors = ["#00B4FF", "#2563EB", "#38D1F8", "#7C3AED", "#A78BFA"];
 
     for (let i = 0; i < 60; i++) {
       particles.push({
@@ -101,7 +102,7 @@ export default function Hero() {
           flex-direction: column;
           gap: 14px;
           width: 100%;
-          max-width: 340px;
+          max-width: 380px;
           margin-top: 24px;
         }
         .hero-ctas .hero-btn {
@@ -114,6 +115,12 @@ export default function Hero() {
           width: 100%;
           max-width: 580px;
         }
+        .hero-trust {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          align-items: center;
+        }
         @media (min-width: 640px) {
           .hero-ctas {
             flex-direction: row;
@@ -124,11 +131,37 @@ export default function Hero() {
           .hero-ctas .hero-btn {
             width: auto;
           }
+          .hero-trust {
+            flex-direction: row;
+            gap: 20px;
+          }
         }
         @media (min-width: 768px) {
           .hero-stats {
             gap: 40px;
           }
+        }
+        .hero-floating-logo {
+          position: absolute;
+          top: 15%;
+          right: -10%;
+          opacity: 0.25;
+          z-index: 1;
+          pointer-events: none;
+          filter: drop-shadow(0 0 60px rgba(0, 180, 255, 0.3)) drop-shadow(0 0 100px rgba(124, 58, 237, 0.3));
+          animation: floatSlow 8s ease-in-out infinite;
+          transform: rotate(15deg);
+        }
+        @media (min-width: 1024px) {
+          .hero-floating-logo {
+            right: 5%;
+            top: 25%;
+            opacity: 0.4;
+          }
+        }
+        @keyframes floatSlow {
+          0%, 100% { transform: translateY(0px) rotate(15deg); }
+          50% { transform: translateY(-20px) rotate(12deg); }
         }
       `}</style>
 
@@ -153,11 +186,23 @@ export default function Hero() {
           width: "800px",
           height: "500px",
           background:
-            "radial-gradient(ellipse, rgba(0,180,255,0.12) 0%, rgba(37,99,235,0.06) 40%, transparent 70%)",
+            "radial-gradient(ellipse, rgba(124,58,237,0.1) 0%, rgba(0,180,255,0.12) 30%, rgba(37,99,235,0.06) 60%, transparent 80%)",
           pointerEvents: "none",
           zIndex: 1,
         }}
       />
+
+      {/* Premium Floating Logo */}
+      <div className="hero-floating-logo">
+        <Image
+          src="/logo-saina-transparent.png"
+          alt=""
+          width={450}
+          height={450}
+          style={{ objectFit: "contain" }}
+          priority
+        />
+      </div>
 
       {/* Bottom gradient fade */}
       <div
@@ -192,7 +237,7 @@ export default function Hero() {
         {/* Badge */}
         <div className="tag-pill" style={{ animation: "none" }}>
           <Zap size={12} />
-          Agence IA & Automatisation · Antananarivo
+          Automatisation IA pour entrepreneurs malgaches
         </div>
 
         {/* Headline */}
@@ -212,7 +257,7 @@ export default function Hero() {
           <span
             className="gradient-text"
             style={{
-              filter: "drop-shadow(0 0 15px rgba(0,180,255,0.3))",
+              filter: "drop-shadow(0 0 15px rgba(124,58,237,0.3))",
               display: "inline-block",
             }}
           >
@@ -225,20 +270,20 @@ export default function Hero() {
           style={{
             fontSize: "clamp(1rem, 2vw, 1.2rem)",
             color: "var(--text-secondary)",
-            maxWidth: "600px",
+            maxWidth: "620px",
             fontWeight: 400,
             lineHeight: 1.7,
           }}
         >
-          Saina Labs automatise les tâches répétitives de votre entreprise
-          grâce à des outils IA conçus spécifiquement pour les{" "}
-          <strong style={{ color: "var(--text-primary)", fontWeight: 500 }}>
-            entrepreneurs malgaches
+          Gagnez{" "}
+          <strong style={{ color: "var(--text-primary)", fontWeight: 600 }}>
+            40h par mois
           </strong>
-          .
+          . Automatisez réponses WhatsApp, suivi client et gestion des stocks
+          — sans rien changer à vos habitudes.
         </p>
 
-        {/* CTAs - Premium buttons */}
+        {/* CTAs */}
         <div className="hero-ctas">
           <a
             href="#waitlist"
@@ -251,7 +296,7 @@ export default function Hero() {
               letterSpacing: "0.01em",
             }}
           >
-            Rejoindre les premiers
+            Diagnostic gratuit
             <ArrowRight size={18} style={{ marginLeft: "4px" }} />
           </a>
           <a
@@ -265,32 +310,35 @@ export default function Hero() {
               letterSpacing: "0.01em",
             }}
           >
-            <Play
-              size={16}
-              style={{
-                fill: "currentColor",
-                opacity: 0.7,
-              }}
-            />
-            Voir comment ça marche
+            Voir les résultats
           </a>
         </div>
 
-        {/* Social proof */}
-        <p
-          style={{
-            fontSize: "0.8rem",
-            color: "var(--text-muted)",
-            letterSpacing: "0.02em",
-            marginTop: "8px",
-          }}
-        >
-          Étude de marché réalisée auprès de{" "}
-          <span style={{ color: "var(--cyan)", fontWeight: 600 }}>
-            +50 entrepreneurs malgaches
-          </span>{" "}
-          · Lancement prévu 2026
-        </p>
+        {/* Trust badges */}
+        <div className="hero-trust" style={{ marginTop: "8px" }}>
+          {[
+            { icon: Shield, text: "Garantie ROI 30 jours" },
+            { icon: Smartphone, text: "WhatsApp natif" },
+            { icon: Clock, text: "Déploiement en 2 semaines" },
+          ].map((badge) => {
+            const Icon = badge.icon;
+            return (
+              <div
+                key={badge.text}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  fontSize: "0.78rem",
+                  color: "var(--text-muted)",
+                }}
+              >
+                <Icon size={13} color="#7C3AED" />
+                <span>{badge.text}</span>
+              </div>
+            );
+          })}
+        </div>
 
         {/* Stats row */}
         <div
@@ -302,9 +350,9 @@ export default function Hero() {
           }}
         >
           {[
-            { value: "40+", label: "heures/mois récupérées" },
-            { value: "24/7", label: "disponibilité IA" },
-            { value: "2sem.", label: "délai moyen de déploiement" },
+            { value: "40h/mois", label: "de temps récupéré" },
+            { value: "24/7", label: "réponses automatiques" },
+            { value: "30j", label: "garantie ROI" },
           ].map((stat) => (
             <div key={stat.label} style={{ textAlign: "center" }}>
               <div
@@ -313,7 +361,7 @@ export default function Hero() {
                   fontWeight: 800,
                   fontSize: "clamp(1.3rem, 3vw, 1.7rem)",
                   background:
-                    "linear-gradient(135deg, #00B4FF, #38D1F8)",
+                    "linear-gradient(135deg, #00B4FF, #7C3AED)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
